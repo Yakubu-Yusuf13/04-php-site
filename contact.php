@@ -1,6 +1,9 @@
 <?php
+declare(strict_types=1);
+
 $pageTitle = 'Contact';
 require_once __DIR__ . '/includes/config.php';
+require_once __DIR__ . '/includes/functions.php';
 require_once __DIR__ . '/includes/header.php';
 ?>
 
@@ -18,8 +21,8 @@ require_once __DIR__ . '/includes/header.php';
             <p class="eyebrow">Email us</p>
             <h2>Let’s start with a hello.</h2>
             <p>Tell us a little about your space, what kind of cleaning you’re looking for, and a good time to reach you.</p>
-            <a class="button button-primary" href="mailto:<?= htmlspecialchars($contactEmail, ENT_QUOTES, 'UTF-8') ?>">Email Prime Cleaners</a>
-            <a class="contact-email" href="mailto:<?= htmlspecialchars($contactEmail, ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($contactEmail, ENT_QUOTES, 'UTF-8') ?></a>
+            <a class="button button-primary" href="mailto:<?= e($contactEmail) ?>">Email Prime Cleaners</a>
+            <a class="contact-email" href="mailto:<?= e($contactEmail) ?>"><?= e($contactEmail) ?></a>
         </div>
         <aside class="contact-aside">
             <p class="eyebrow">A good visit starts here</p>

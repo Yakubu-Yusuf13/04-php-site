@@ -1,6 +1,10 @@
 <?php
+declare(strict_types=1);
+
 $pageTitle = 'About';
 require_once __DIR__ . '/includes/config.php';
+require_once __DIR__ . '/includes/data.php';
+require_once __DIR__ . '/includes/functions.php';
 require_once __DIR__ . '/includes/header.php';
 ?>
 
@@ -20,6 +24,25 @@ require_once __DIR__ . '/includes/header.php';
             <p>We believe the best cleaning service is one that fits naturally into your life. That means listening first, respecting your space, and paying attention to the details that matter to you.</p>
             <p>Whether we’re freshening up a busy home or helping a small business welcome its customers, we bring the same care, consistency, and can-do spirit to every visit.</p>
             <a class="text-link" href="services.php">See how we can help <span aria-hidden="true">&rarr;</span></a>
+        </div>
+    </div>
+</section>
+<section class="section section-soft">
+    <div class="container">
+        <div class="section-heading">
+            <p class="eyebrow">The people behind the polish</p>
+            <h2>Meet our friendly team.</h2>
+            <p>Good care starts with good people. Get to know the team who make every visit feel a little brighter.</p>
+        </div>
+        <div class="team-grid">
+            <?php foreach ($team as $member): ?>
+                <article class="team-card">
+                    <span class="team-avatar" aria-hidden="true"><?= e(substr($member['name'], 0, 1)) ?></span>
+                    <h3><?= e($member['name']) ?></h3>
+                    <p class="team-role"><?= e($member['role']) ?></p>
+                    <p><?= e($member['bio']) ?></p>
+                </article>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
